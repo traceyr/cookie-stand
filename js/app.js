@@ -11,17 +11,21 @@ var pikePlace = {
   custPerHour: function(minCust, maxCust) {
     return Math.floor(Math.random() * (this.maxCust - this.minCust + 1)) + this.minCust;
   },
-  cookiesPerHourAndDay: function() {
-    var totalCookies = 0;
+  cookiesPerHour: function() {
     // total cookies per hour
     for(var i = 0; i < hoursOfOpp.length; i++) {
       var cookiesHour = Math.floor(this.custPerHour() * this.aveCookiePerSale);
       cookiesPerHourAry.push([hoursOfOpp[i], cookiesHour]);
     }
-    // total cookies per day
+    return cookiesPerHourAry;
+  },
+  cookiesPerDay: function() {
+    var totalCookies = 0;
+    cookiesPerHourAry = this.cookiesPerHour();
     for(var i = 0; i < cookiesPerHourAry.length; i++) {
       totalCookies += cookiesPerHourAry[i][1];
     }
+    // console.log(totalCookies)
     cookiesPerHourAry.push(['Total:', totalCookies]);
   // taking the multidemenional array and concatenating to make one array
     for (var i = 0; i < cookiesPerHourAry.length; i++) {
@@ -38,7 +42,7 @@ var pikeName = document.getElementById('pike-place');
 pikeName.textContent = pikePlace.locationName;
 
 var pikeData = document.getElementById('pike-place-info');
-var callingArray = pikePlace.cookiesPerHourAndDay();
+var callingArray = pikePlace.cookiesPerDay();
 for (var i = 0; i < callingArray.length; i++) {
   var newEl = document.createElement('li');
   var newEltwo = pikeData.appendChild(newEl);
