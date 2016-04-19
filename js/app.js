@@ -36,13 +36,13 @@ locationAry.push(pikePlace);
 
 var pikeName = document.getElementById('pike-place');
 pikeName.textContent = pikePlace.locationName;
+
 var pikeData = document.getElementById('pike-place-info');
-pikeData.textContent = pikePlace.cookiesPerHourAndDay();
-console.log(cookiesPerHourAry);
-for (var i = 0; i < cookiesPerHourAry.length; i++) {
+var callingArray = pikePlace.cookiesPerHourAndDay();
+for (var i = 0; i < callingArray.length; i++) {
   var newEl = document.createElement('li');
   var newEltwo = pikeData.appendChild(newEl);
-  newEltwo.textContent = pikePlace.cookiesPerHourAndDay;
+  newEltwo.textContent = callingArray[i];
 }
 
 // for (var i = 0; i < locationAry.length; i++) {
