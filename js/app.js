@@ -1,5 +1,4 @@
-//this is where the js will be
-var hoursOfOpp = ['10am:', '11am:', '12pm:', '1pm:', '2pm:', '3pm:', '4pm:', '5pm:', '6pm:'];
+var hoursOfOpp = ['6am:', '7am:', '8am:', '9am:', '10am:', '11am:', '12pm:', '1pm:', '2pm:', '3pm:', '4pm:', '5pm:', '6pm:', '7pm:', '8pm:'];
 var locationAry = [];
 
 var pikePlace = {
@@ -29,7 +28,7 @@ var pikePlace = {
     this.cookiesPerHourAry.push(['Total:', totalCookies]);
   // taking the multidemenional array and concatenating to make one array
     for (var i = 0; i < this.cookiesPerHourAry.length; i++) {
-      this.cookiesPerHourAry[i] = this.cookiesPerHourAry[i][0] + ' ' + this.cookiesPerHourAry[i][1];
+      this.cookiesPerHourAry[i] = this.cookiesPerHourAry[i][0] + ' ' + this.cookiesPerHourAry[i][1] + ' cookies';
     }
     // console.log(this.cookiesPerHourAry);
     return this.cookiesPerHourAry;
@@ -63,7 +62,7 @@ var seaTac = {
     this.cookiesPerHourAry.push(['Total:', totalCookies]);
   // taking the multidemenional array and concatenating to make one array
     for (var i = 0; i < this.cookiesPerHourAry.length; i++) {
-      this.cookiesPerHourAry[i] = this.cookiesPerHourAry[i][0] + ' ' + this.cookiesPerHourAry[i][1];
+      this.cookiesPerHourAry[i] = this.cookiesPerHourAry[i][0] + ' ' + this.cookiesPerHourAry[i][1] + ' cookies';
     }
     // console.log(this.cookiesPerHourAry);
     return this.cookiesPerHourAry;
@@ -97,7 +96,7 @@ var southcenter = {
     this.cookiesPerHourAry.push(['Total:', totalCookies]);
   // taking the multidemenional array and concatenating to make one array
     for (var i = 0; i < this.cookiesPerHourAry.length; i++) {
-      this.cookiesPerHourAry[i] = this.cookiesPerHourAry[i][0] + ' ' + this.cookiesPerHourAry[i][1];
+      this.cookiesPerHourAry[i] = this.cookiesPerHourAry[i][0] + ' ' + this.cookiesPerHourAry[i][1] + ' cookies';
     }
     // console.log(this.cookiesPerHourAry);
     return this.cookiesPerHourAry;
@@ -131,7 +130,7 @@ var bellevueSquare = {
     this.cookiesPerHourAry.push(['Total:', totalCookies]);
   // taking the multidemenional array and concatenating to make one array
     for (var i = 0; i < this.cookiesPerHourAry.length; i++) {
-      this.cookiesPerHourAry[i] = this.cookiesPerHourAry[i][0] + ' ' + this.cookiesPerHourAry[i][1];
+      this.cookiesPerHourAry[i] = this.cookiesPerHourAry[i][0] + ' ' + this.cookiesPerHourAry[i][1] + ' cookies';
     }
     // console.log(this.cookiesPerHourAry);
     return this.cookiesPerHourAry;
@@ -165,7 +164,7 @@ var alki = {
     this.cookiesPerHourAry.push(['Total:', totalCookies]);
   // taking the multidemenional array and concatenating to make one array
     for (var i = 0; i < this.cookiesPerHourAry.length; i++) {
-      this.cookiesPerHourAry[i] = this.cookiesPerHourAry[i][0] + ' ' + this.cookiesPerHourAry[i][1];
+      this.cookiesPerHourAry[i] = this.cookiesPerHourAry[i][0] + ' ' + this.cookiesPerHourAry[i][1] + ' cookies';
     }
     // console.log(this.cookiesPerHourAry);
     return this.cookiesPerHourAry;
