@@ -1,3 +1,30 @@
 body {
-  
+  background-color: #989898;
+  background-image: url('../images/salmon.png');
+  background-repeat: no-repeat;
+  background-attachment: scroll;
+  background-position: center;
+  background-blend-mode: lighten;
+  font-family: 'Montserrat', sans-serif;
+  color: #FF6633;
+  text-shadow: 1px 1px 0px #000000;
+}
+
+h1 {
+  text-align: center;
+  font-family:  Helvetica, sans-serif;
+}
+
+p {
+  font-family:  Helvetica, sans-serif;
+  color: #000000;
+}
+
+ul, ol {
+  font-family: Georgia, serif;
+  color: #003cb3;
+}
+
+table {
+  background-color: #b8b894;
 }
