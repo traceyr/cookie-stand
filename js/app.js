@@ -10,6 +10,7 @@ var storeLocation = function(locationName, minCust, maxCust, aveCookiePerSale){
   this.aveCookiePerSale = aveCookiePerSale;
   this.cookiesPerHourAry = [];
   this.totalCookies = 0;
+  // locationAry.push(this);
   this.custPerHour = function(minCust, maxCust) {
     return Math.floor(Math.random() * (this.maxCust - this.minCust + 1)) + this.minCust;
   };
@@ -29,6 +30,8 @@ var storeLocation = function(locationName, minCust, maxCust, aveCookiePerSale){
     return this.cookiesPerHourAry;
   };
 };
+
+var newStore = document.getElementById('newStore');
 
 locationAry.push(new storeLocation('Pike Place Market', 17, 88, 5.2));
 locationAry.push(new storeLocation('SeaTac Airport', 6, 24, 1,2));
@@ -72,4 +75,28 @@ function makeItWork(){
     makeStoreRows(locationAry[i]);
   }
 }
+
+function handleStoreEdition(event){
+  console.log(event);
+  event.preventDefault();
+  if(!event.target.storeName.value || !event.target.minCust.value || !event.target.maxCust.value || !event.target.aveCookies.value){
+    return alert('all fields must be completed plz!');
+  }
+
+  var location = event.target.storeName.value;
+  var min = event.target.minCust.value;
+  var max = event.target.maxCust.value;
+  var ave = event.target.aveCookies.value;
+  var newLocation = new storeLocation(location, min, max, ave);
+
+  event.target.storeName.value = null;
+  event.target.minCust.value = null;
+  event.target.maxCust.value = null;
+  event.target.aveCookies.value = null;
+
+  locationAry.push(newLocation);
+  makeItWork();
+}
+
+newStore.addEventListener('submit', handleStoreEdition);
 makeItWork();
