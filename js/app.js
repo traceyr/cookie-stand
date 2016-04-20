@@ -2,6 +2,7 @@ var hoursOfOpp = ['6am:', '7am:', '8am:', '9am:', '10am:', '11am:', '12pm:', '1p
 var locationAry = [];
 var appendRows = document.getElementById('storeData');
 var appendHead = document.getElementById('storeHours');
+var newLocationArray = [];
 
 var storeLocation = function(locationName, minCust, maxCust, aveCookiePerSale){
   this.locationName = locationName;
@@ -53,35 +54,32 @@ function makeHeader (array){
 
 makeHeader(hoursOfOpp);
 
-function makeStoreRows (store){
+storeLocation.prototype.makeStoreRows = function(){
   var tr = document.createElement('tr');
   var th = document.createElement('th');
-  th.textContent = store.locationName;
+  th.textContent = this.locationName;
   tr.appendChild(th);
-  for(var i = 0; i < store.cookiesPerHourAry.length - 1; i++){
+  for(var i = 0; i < this.cookiesPerHourAry.length - 1; i++){
     var td = document.createElement('td');
-    td.textContent = store.cookiesPerHourAry[i];
+    td.textContent = this.cookiesPerHourAry[i];
     tr.appendChild(td);
   }
   var totalCell = document.createElement('td');
-  totalCell.textContent = store.totalCookies;
+  totalCell.textContent = this.totalCookies;
   tr.appendChild(totalCell);
   appendRows.appendChild(tr);
-}
+};
 
-function makeItWork(){
-  for (var i = 0; i < locationAry.length; i++){
-    locationAry[i].cookiesPerDay();
-    makeStoreRows(locationAry[i]);
+function makeItWork(array){
+  for (var i = 0; i < array.length; i++){
+    array[i].cookiesPerDay();
+    array[i].makeStoreRows();
   }
 }
 
 function handleStoreEdition(event){
   console.log(event);
   event.preventDefault();
-  if(!event.target.storeName.value || !event.target.minCust.value || !event.target.maxCust.value || !event.target.aveCookies.value){
-    return alert('all fields must be completed plz!');
-  }
 
   var location = event.target.storeName.value;
   var min = event.target.minCust.value;
@@ -94,9 +92,10 @@ function handleStoreEdition(event){
   event.target.maxCust.value = null;
   event.target.aveCookies.value = null;
 
-  locationAry.push(newLocation);
-  makeItWork();
+  newLocationArray.push(newLocation);
+  makeItWork(newLocationArray);
+  newLocationArray = [];
 }
 
 newStore.addEventListener('submit', handleStoreEdition);
-makeItWork();
+makeItWork(locationAry);
