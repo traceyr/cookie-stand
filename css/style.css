@@ -12,12 +12,39 @@ header {
   background-position: center;
   background-blend-mode: lighten;
   height: 300px;
+}
+header h1 {
+  padding-top: 140px
+}
 
+.main-navigation li {
+  display: inline;
+  text-align: center;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+.main-navigation {
+  text-align: center;
+}
+
+.nav-list a {
+  text-decoration: none;
+  color: black;
+  font-size: 20px;
+}
+
+.hero {
+  background-image: url('../images/cutter.jpeg');
+  opacity: 0.5;
 }
 
 h1 {
   text-align: center;
   font-family:  Helvetica, sans-serif;
+}
+
+h3 {
+  text-align: center;
 }
 
 p {
@@ -36,7 +63,6 @@ table {
 
 li {
   list-style: none;
-  text-decoration: none;
 }
 
 section {
