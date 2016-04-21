@@ -1,13 +1,18 @@
 body {
   background-color: #989898;
-  background-image: url('../images/salmon.png');
-  background-repeat: no-repeat;
-  background-attachment: scroll;
-  background-position: center;
-  background-blend-mode: lighten;
-  font-family: 'Montserrat', sans-serif;
   color: #FF6633;
   text-shadow: 1px 1px 0px #000000;
+  font-family: 'Montserrat', sans-serif;
+}
+
+header {
+  background-color: #989898;
+  background-image: url('../images/salmon.png');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-blend-mode: lighten;
+  height: 300px;
+
 }
 
 h1 {
@@ -27,4 +32,14 @@ ul, ol {
 
 table {
   background-color: #b8b894;
+}
+
+li {
+  list-style: none;
+  text-decoration: none;
+}
+
+section {
+  padding-top: 25px;
+  padding-bottom: 25px;
 }
