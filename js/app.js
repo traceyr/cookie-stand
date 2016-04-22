@@ -1,8 +1,7 @@
-var hoursOfOpp = ['6am:', '7am:', '8am:', '9am:', '10am:', '11am:', '12pm:', '1pm:', '2pm:', '3pm:', '4pm:', '5pm:', '6pm:', '7pm:', '8pm:', 'Totals'];
-var locationAry = [];
+var hoursOfOpp = ['6am', '7am', '8am', '9am', '10am', '11am', '12pm', '1pm', '2pm', '3pm', '4pm', '5pm', '6pm', '7pm', '8pm', 'Totals'];
 var appendRows = document.getElementById('storeData');
 var appendHead = document.getElementById('storeHours');
-var newLocationArray = [];
+var locationAry = [];
 
 var storeLocation = function(locationName, minCust, maxCust, aveCookiePerSale){
   this.locationName = locationName;
@@ -12,7 +11,7 @@ var storeLocation = function(locationName, minCust, maxCust, aveCookiePerSale){
   this.cookiesPerHourAry = [];
   this.totalCookies = 0;
   // locationAry.push(this);
-  this.custPerHour = function(minCust, maxCust) {
+  this.custPerHour = function() {
     return Math.floor(Math.random() * (this.maxCust - this.minCust + 1)) + this.minCust;
   };
   this.cookiesPerHour = function() {
@@ -70,11 +69,9 @@ storeLocation.prototype.makeStoreRows = function(){
   appendRows.appendChild(tr);
 };
 
-function makeItWork(array){
-  for (var i = 0; i < array.length; i++){
-    array[i].cookiesPerDay();
-    array[i].makeStoreRows();
-  }
+function makeItWork(store) {
+  store.cookiesPerDay();
+  store.makeStoreRows();
 }
 
 function handleStoreEdition(event){
@@ -92,10 +89,11 @@ function handleStoreEdition(event){
   event.target.maxCust.value = null;
   event.target.aveCookies.value = null;
 
-  newLocationArray.push(newLocation);
-  makeItWork(newLocationArray);
-  newLocationArray = [];
+  makeItWork(newLocation);
 }
 
 newStore.addEventListener('submit', handleStoreEdition);
-makeItWork(locationAry);
+
+for (var i = 0; i < locationAry.length; i++) {
+  makeItWork(locationAry[i]);
+}

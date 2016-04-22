@@ -1,18 +1,51 @@
 body {
   background-color: #989898;
-  background-image: url('../images/salmon.png');
-  background-repeat: no-repeat;
-  background-attachment: scroll;
-  background-position: center;
-  background-blend-mode: lighten;
-  font-family: 'Montserrat', sans-serif;
   color: #FF6633;
   text-shadow: 1px 1px 0px #000000;
+  font-family: 'Montserrat', sans-serif;
+}
+
+header {
+  background-color: #989898;
+  background-image: url('../images/salmon.png');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-blend-mode: lighten;
+  height: 300px;
+
+}
+header h1 {
+  padding-top: 140px
+}
+
+.main-navigation li {
+  display: inline;
+  text-align: center;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+.main-navigation {
+  text-align: center;
+}
+
+.nav-list a {
+  text-decoration: none;
+  color: black;
+  font-size: 20px;
+}
+
+.hero {
+  background-image: url('../images/cutter.jpeg');
+  opacity: 0.5;
 }
 
 h1 {
   text-align: center;
   font-family:  Helvetica, sans-serif;
+}
+
+h3 {
+  text-align: center;
 }
 
 p {
@@ -27,4 +60,29 @@ ul, ol {
 
 table {
   background-color: #b8b894;
+}
+
+li {
+  list-style: none;
+}
+
+section {
+  padding-top: 25px;
+  padding-bottom: px;
+}
+
+section h1 {
+  padding-bottom: 20px;
+}
+
+.family {
+  background-image: url('../images/family.jpg');
+  opacity: 0.5;
+  background-repeat: no-repeat;
+  background-size: 100%;
+}
+
+
+.family p {
+  height: 500px;
 }
